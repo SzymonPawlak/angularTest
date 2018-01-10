@@ -13,7 +13,8 @@ import { AuthenticationService } from './services/authentication/authentication.
 import { AccountsService} from './services/accounts/accounts.service';
 import { SearchService} from './services/search/search.service';
 
-
+// 3th part libraries
+import { NgHttpLoaderModule } from 'ng-http-loader/ng-http-loader.module';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { SearchService} from './services/search/search.service';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgHttpLoaderModule
   ],
   providers: [
     AuthenticationService,
