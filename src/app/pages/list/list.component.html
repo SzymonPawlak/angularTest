@@ -1,0 +1,10 @@
+<div class="container">
+  <div *ngIf="showList">
+    <input (keyup)="search(searchQuery.value)" #searchQuery>Search
+
+    <div *ngFor="let product of listofProducts?.products?.now?.contribution">
+      {{product?.accountData?.price?.now}}
+      <img [src]="product.baseImageUrl" alt="shoes">
+    </div>
+  </div>
+</div>
