@@ -7,7 +7,7 @@ import { HttpClientModule, HttpClient, HttpHeaders } from '@angular/common/http'
 import { AuthenticationService } from '../authentication/authentication.service';
 
 // Models
-import { User } from '../../models/models';
+import { User } from '../../models/access';
 
 @Injectable()
 export class AccountsService {

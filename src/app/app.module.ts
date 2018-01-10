@@ -15,6 +15,7 @@ import { SearchService} from './services/search/search.service';
 
 // 3th part libraries
 import { NgHttpLoaderModule } from 'ng-http-loader/ng-http-loader.module';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { NgHttpLoaderModule } from 'ng-http-loader/ng-http-loader.module';
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    NgHttpLoaderModule
+    NgHttpLoaderModule,
+    InfiniteScrollModule
   ],
   providers: [
     AuthenticationService,

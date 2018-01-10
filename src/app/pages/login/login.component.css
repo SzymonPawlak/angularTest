@@ -4,4 +4,7 @@
     margin: 0 auto;
     margin-top: 40px;
 }
+input, button {
+    margin: 20px 0;
+}
 

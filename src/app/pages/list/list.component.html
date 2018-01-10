@@ -1,14 +1,23 @@
 <div class="container List">
   <div *ngIf="showList">
-    <input (keyup)="search(searchQuery.value)" #searchQuery>Search
+    <label for="inputSearch" class="sr-only">Email address</label>
+    <input (keyup)="search(searchQuery.value)" #searchQuery class="form-control" id ="inputSearch" placeholder="Search...">
 
-    <div *ngFor="let product of listofProducts?.products" class="List-product">
-      {{product?.accountData?.prices?.now?.contribution}} {{product?.accountData?.price?.now?.currency}}
-      <img [src]="product.baseImageUrl" alt="shoes">
+    <div *ngFor="let product of listofProducts">
+      <div class="card">
+        <img class="List-product card-img-top" [src]="product.baseImageUrl" alt="shoes">
+        <div class="card-body">
+            <h1 class="card-text">{{product?.accountData?.prices?.now?.contribution}} {{product?.accountData?.prices?.now?.contributionCurrency}}</h1>
+        </div>
+      </div>
     </div>
+  </div>
 
-    <div *ngIf="!listofProducts?.products">
-      no results
-    </div>
+  <!-- infiniteScroll -->
+  <div class="search-results"
+    infiniteScroll
+    [infiniteScrollDistance]="0"
+    [infiniteScrollThrottle]="300"
+    (scrolled)="onScroll()">
   </div>
 </div>

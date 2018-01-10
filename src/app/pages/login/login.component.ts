@@ -5,7 +5,7 @@ import { AuthenticationService } from '../../services/authentication/authenticat
 import { AccountsService } from '../../services/accounts/accounts.service';
 
 // Models
-import { User } from '../../models/models';
+import { User } from '../../models/access';
 
 @Component({
   selector: 'app-login',

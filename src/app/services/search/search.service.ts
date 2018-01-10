@@ -8,7 +8,7 @@ import { AuthenticationService } from '../authentication/authentication.service'
 import { AccountsService } from '../accounts/accounts.service';
 
 // Models
-import { User } from '../../models/models';
+import { User } from '../../models/access';
 
 @Injectable()
 export class SearchService {
@@ -25,10 +25,10 @@ export class SearchService {
 
   private user: User;
 
-  search(searchQuery: string) {
+  search(searchQuery: string, start: number, range: number, ) {
     const accountsId = this.accountsService.accountId;
     return this.http
-    .get(`https://epicuroapitest.azurewebsites.net/api/products/${accountsId}?q=${searchQuery}&start=${0}&num=${10}&type=now`,{
+    .get(`https://epicuroapitest.azurewebsites.net/api/products/${accountsId}?q=${searchQuery}&start=${start}&num=${range}&type=now`,{
       headers: new HttpHeaders().set('Authorization', `${this.user.accessToken} ${ this.user.tokenType}`),
     });
 

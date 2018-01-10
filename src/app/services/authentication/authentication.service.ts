@@ -5,7 +5,7 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 
 // Models
-import { User } from '../../models/models';
+import { User } from '../../models/access';
 
 
 @Injectable()
